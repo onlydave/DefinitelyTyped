@@ -41,11 +41,11 @@ export type InferableComponentEnhancerWithPropsAndRef<TTranslateFunctionName ext
 export interface Translate {
     <TNamespace extends string>
     (namespaces?: TNamespace | TNamespace[], options?: Omit<TranslateOptions, "translateFuncName"> & { withRef?: false }):
-        InferableComponentEnhancerWithProps<"t">;
+        InferableComponentEnhancerWithProps<"t" | "tReady">;
 
     <TNamespace extends string>
     (namespaces?: TNamespace | TNamespace[], options?: Omit<TranslateOptions, "translateFuncName"> & { withRef: true }):
-        InferableComponentEnhancerWithPropsAndRef<"t">;
+        InferableComponentEnhancerWithPropsAndRef<"t" | "tReady">;
 
     <TNamespace extends string, TTranslateFunctionName extends string>
     (namespaces?: TNamespace | TNamespace[], options?: TranslateOptions<TTranslateFunctionName> & { withRef?: false }):

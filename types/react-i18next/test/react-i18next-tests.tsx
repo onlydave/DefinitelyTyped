@@ -155,6 +155,16 @@ function StatlessComponent(props: InjectedTranslateProps) {
 const TranslatedStatlessComponent = translate()(StatlessComponent);
 <TranslatedStatlessComponent />;
 
+function loadingComponent(props: InjectedTranslateProps) {
+  if (props.tReady) {
+    return <h1>{props.t("hy")}</h1>;
+  }
+  return <h1>...</h1>;
+}
+
+const TranslatedLoadingComponent = translate()(loadingComponent);
+<TranslatedLoadingComponent />;
+
 interface CustomTranslateFunctionProps {
   _: TranslationFunction;
 }

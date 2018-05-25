@@ -14,6 +14,7 @@ import {i18n as I18n, TranslationFunction} from "i18next";
  */
 export interface InjectedTranslateProps {
     t: TranslationFunction;
+    tReady: boolean;
 }
 
 /**
